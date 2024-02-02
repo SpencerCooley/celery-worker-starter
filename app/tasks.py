@@ -10,7 +10,7 @@ rabbit_user = os.environ['RABBIT_USER']
 rabbit_pass = os.environ['RABBIT_PASS']
 rabbit_host = os.environ['RABBIT_HOST']
 
-# Instantiate and configure Celery using formatted string
+# set up celery with credentials
 celery = Celery('tasks',
                 broker=f'pyamqp://{rabbit_user}:{rabbit_pass}@{rabbit_host}//',
                 include=['tasks'])
@@ -23,6 +23,15 @@ def print_something(arg1, arg2):
     print(arg1)
     print(arg2)
     pass
+
+@celery.task
+def print_something(arg1, arg2):
+    # Task implementation
+    print("this is working")
+    print(arg1)
+    print(arg2)
+    pass
+
 
 # add tasks for whatever you want to do without blocking the api
 # run ml models, 
