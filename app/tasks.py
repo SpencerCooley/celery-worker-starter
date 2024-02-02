@@ -24,15 +24,6 @@ def print_something(arg1, arg2):
     print(arg2)
     pass
 
-@celery.task
-def print_something(arg1, arg2):
-    # Task implementation
-    print("this is working")
-    print(arg1)
-    print(arg2)
-    pass
-
-
 # add tasks for whatever you want to do without blocking the api
 # run ml models, 
 # process large files 
