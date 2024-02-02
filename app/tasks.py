@@ -3,9 +3,6 @@ from dotenv import load_dotenv
 import os
 import sys
 from celery import Celery
-
-#it is best to set this up as environment variables, but this repo is just for showing simple use in a blog post. 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 load_dotenv()
 
 # Access environment variables
