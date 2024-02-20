@@ -7,6 +7,7 @@ __pycache__/
 .vscode/
 *.swp
 *.swo
+app/.env
 
 # Operating System files
 .DS_Store
